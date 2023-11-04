@@ -4,9 +4,10 @@
 /* configSUPPORT_STATIC_ALLOCATION is set to 1, so the application must provide an
 implementation of vApplicationGetIdleTaskMemory() to provide the memory that is
 used by the Idle task. */
+//Adjusted to the latest FreeRTOS
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer,
                                     StackType_t **ppxIdleTaskStackBuffer,
-                                    uint32_t *pulIdleTaskStackSize )
+                                    uint32_t *pulIdleTaskStackSize,BaseType_t xCoreId )
 {
 /* If the buffers to be provided to the Idle task are declared inside this
 function then they must be declared static – otherwise they will be allocated on
